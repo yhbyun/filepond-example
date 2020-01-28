@@ -31,10 +31,12 @@
   // Import image preview and file type validation plugins
   import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type'
   import FilePondPluginImagePreview from 'filepond-plugin-image-preview'
+  import FilePondPluginImageExifOrientation from 'filepond-plugin-image-exif-orientation'
 
   // Create component
   const FilePond = vueFilePond(
     FilePondPluginFileValidateType,
+    FilePondPluginImageExifOrientation,
     FilePondPluginImagePreview
   )
 

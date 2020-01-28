@@ -69,7 +69,14 @@
           formData.append("files[" + i + "]", file);
         }
 
-        // TODO: upload via API
+        this.$store
+          .dispatch("store", formData)
+          .then(response => {
+            alert('Success')
+          })
+          .catch(error => {
+            alert('Error')
+          });
       },
     },
   }

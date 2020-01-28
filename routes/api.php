@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,11 @@ use Illuminate\Http\Request;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::post('products', function (Request $request) {
+    foreach ($request->file('files') as $file) {
+        $filename = Str::random(5) . '.' . $file->extension();
+        Storage::putFileAs('images', $file, $filename); //Store image
+    }
 });

@@ -21,6 +21,8 @@ window.Vue = require('vue');
 
 Vue.component('filepond-component', require('./components/FileFondComponent.vue').default);
 
+import store from '../js/store'
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -29,4 +31,5 @@ Vue.component('filepond-component', require('./components/FileFondComponent.vue'
 
 const app = new Vue({
     el: '#app',
+    store,
 });

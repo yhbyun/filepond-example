@@ -6,7 +6,7 @@
       name="test"
       ref="pond"
       label-idle="Drop files here or <span class='filepond--label-action'>Browse</span>"
-      allow-multiple="true"
+      v-bind:allow-multiple="true"
       accepted-file-types="image/jpeg, image/png"
       v-bind:files="myFiles"
       v-on:updatefiles="handleFilePondUpdateFile"

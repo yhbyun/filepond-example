@@ -6,7 +6,14 @@
       name="test"
       ref="pond"
       label-idle="Drop files here or <span class='filepond--label-action'>Browse</span>"
-      v-bind:allow-multiple="true"
+      imagePreviewHeight="170"
+      imageCropAspectRatio="1:1"
+      imageResizeTargetWidth="200"
+      imageResizeTargetHeight="200"
+      stylePanelLayout="compact circle"
+      styleLoadIndicatorPosition="center bottom"
+      styleButtonRemoveItemPosition="center bottom"
+      v-bind:allow-multiple="false"
       accepted-file-types="image/jpeg, image/png"
       v-bind:files="myFiles"
       v-on:updatefiles="handleFilePondUpdateFile"
@@ -32,12 +39,18 @@
   import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type'
   import FilePondPluginImagePreview from 'filepond-plugin-image-preview'
   import FilePondPluginImageExifOrientation from 'filepond-plugin-image-exif-orientation'
+  import FilePondPluginImageCrop from 'filepond-plugin-image-crop'
+  import FilePondPluginImageResize from 'filepond-plugin-image-resize'
+  import FilePondPluginImageTransform from 'filepond-plugin-image-transform'
 
   // Create component
   const FilePond = vueFilePond(
     FilePondPluginFileValidateType,
     FilePondPluginImageExifOrientation,
-    FilePondPluginImagePreview
+    FilePondPluginImagePreview,
+    FilePondPluginImageCrop,
+    FilePondPluginImageResize,
+    FilePondPluginImageTransform
   )
 
   export default {

@@ -72,10 +72,10 @@
         this.$store
           .dispatch("store", formData)
           .then(response => {
-            alert('Success')
+            this.$snotify.success("Success")
           })
           .catch(error => {
-            alert('Error')
+            this.$snotify.error("Error")
           });
       },
     },

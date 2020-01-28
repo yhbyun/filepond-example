@@ -22,6 +22,10 @@ window.Vue = require('vue');
 Vue.component('filepond-component', require('./components/FileFondComponent.vue').default);
 
 import store from '../js/store'
+import Snotify from 'vue-snotify'
+import 'vue-snotify/styles/material.css'
+
+Vue.use(Snotify)
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
